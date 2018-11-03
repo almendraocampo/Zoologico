@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block contenido %}
+<center>
+	<h1>
+		Bienvenido/a
+		{{ user }}
+	</h1>
+</center>
+
+
+<body>
+	<div class="container">
+		<h3>Acerca de Nosotros</h3>
+		<strong>Es considerado uno de los zoologicos mas visitados
+			del mundo, recibe mas de 5.5 millones de visitantes anuales,
+			incluyendo estudiantes de todo el pais. Hoy el Zoologico de
+			Concepcion tiene un nuevo hospital y laboratorios, cuenta ademas, con
+			un proyecto para un nuevo centro de atencion para visitantes y area
+			educativa que incluira una biblioteca, centro de exposiciones y un
+			auditorio.</strong> <br> <strong>El Zoologico de Concepcion es
+			una de las instituciones recreativas mas populares de Chile, tanto
+			para los habitantes de esta como para los turistas nacionales y
+			extranjeros, es considerado un centro de integracion social, familiar
+			e intergeneracional que forma parte de nuestra historia, por lo que
+			puede considerarse como el Zoologico Nacional Ha evolucionado a
+			traves de su historia y al comienzo del siglo XXI sus principales
+			objetivos son la recreacion, la educacion, la investigacion y la
+			conservacion.</strong> <br>
+
+
+		<center>
+			<div class="row">
+				<div class="col">
+					<h4>Ubicacion</h4>
+					<p>
+
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6386.200003277591!2d-73.006797!3d-36.840081!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdc85a0b6f8bf3095!2sParque+Zool%C3%B3gico+Concepci%C3%B3n!5e0!3m2!1ses!2scl!4v1541218172151"
+							width="400" height="300" frameborder="0" style="border: 0"
+							allowfullscreen></iframe>
+					</p>
+				</div>
+				<div class="col">
+					<h4>Zoo Mapa</h4>
+
+					<img
+						src="http://www.zooleon.org.mx/wp-content/themes/zooleon/img/mapaZooleon.png"
+						alt="jirafa" width="600" height="550" />
+
+
+				</div>
+			</div>
+
+		</center>
+	</div>
+</body>
+
+
+{% endblock contenido %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block contenido %}
+<h1>Listado de Tipos de Animales</h1>
+
+<table class = "table">
+
+	<tr>
+		<th>Codigo</th>
+		<th>Nombre</th>
+		<th>Descripcion</th>
+		<th>Opciones</th>
+	</tr>
+
+	{% for tipo in tipos %}
+
+	<tr>
+		<th>{{ tipo.getCodigo() }}</th>
+		<th>{{ tipo.getNombre() }}</th>
+		<th>{{ tipo.getDescripcion() }}</th>
+
+		<td><a href="eliminarTipo?codigo={{ tipo.getCodigo() }}" class="btn btn-danger">Eliminar</a>
+			<a href="modificarTipo?codigo={{ tipo.getCodigo() }}" class="btn btn-warning">Modificar</a></td>
+	</tr>
+	{% endfor %}
+</table>
+<h4>
+	{{ mensaje }}
+</h4>
+{% endblock contenido %}

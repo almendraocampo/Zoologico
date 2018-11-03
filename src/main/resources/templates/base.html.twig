@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Zoo Concepción</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+body {
+	background-color:#078C1F;
+	background-size: 1400px 700px;
+	background-position: center;
+
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+	
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Inicio</a></li>
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#">Animal <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/crear">Agregar</a></li>
+						<li><a href="/listar">Gestionar</a></li>
+					</ul></li>
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#">Tipo <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/crearTipo">Agregar</a></li>
+						<li><a href="/listarTipo">Gestionar</a></li>
+
+					</ul></li>
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#">Sector <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/crearSector">Agregar</a></li>
+						<li><a href="/listarSector">Gestionar</a></li>
+					</ul></li>
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#">Usuario <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/crearUsuario">Agregar</a></li>
+						<li><a href="/listarUsuario">Gestionar</a></li>
+					</ul></li>
+					<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#">Estadisticas <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/tipoAnimal">Tipo animal</a></li>
+						<li><a href="/fechaIngresoAnimal">Fecha Ingreso Animal</a></li>
+
+					</ul></li>
+					<li ><a href="/imagenes">Atracciones</a></li>
+					
+
+				<li><a></a></li>
+				<li><a></a></li>
+				<li><a></a></li>
+				<li><a></a></li>
+				<li><a></a></li>
+				<li><a></a></li>
+				<li><a></a></li>
+				<li><a></a></li>
+				<li><a></a></li>
+				<li><a></a></li>
+				<li><a></a></li>
+				<li><a></a></li>
+				<li><a></a></li>
+				<li><a></a></li>
+				<li><a></a></li>
+	
+
+				<li><a href="/logout">Cerrar Sesión</a></li>
+				<li><a>{{ user }}</a></li>
+				
+
+			</ul>
+		</div>
+	</nav>
+
+	<center>
+		<h1>Zoologico Concepción</h1>
+	</center>
+	{% block contenido %}
+
+
+	{% endblock contenido %}
+
+</body>
+
+</html>

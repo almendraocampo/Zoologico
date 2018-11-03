@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block contenido %}
+<h1>Listado de Usuarios</h1>
+
+<table class = "table">
+
+	<tr>
+		<th>Codigo</th>
+		<th>User</th>
+		<th>Pass</th>
+		<th>Opciones</th>
+	</tr>
+
+	{% for usuario in usuarios %}
+
+	<tr>
+		<th>{{ usuario.getCodigo() }}</th>
+		<th>{{ usuario.getUser() }}</th>
+		<th>{{ usuario.getPass() }}</th>
+
+		<td><a href="eliminarUsuario?codigo={{ usuario.getCodigo() }}" class="btn btn-danger">Eliminar</a>
+			<a href="modificarUsuario?codigo={{ usuario.getCodigo() }}" class="btn btn-warning">Modificar</a></td>
+	</tr>
+	{% endfor %}
+</table>
+<h4>
+	{{ mensaje }}
+</h4>
+{% endblock contenido %}

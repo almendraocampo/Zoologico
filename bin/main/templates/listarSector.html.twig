@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block contenido %}
+<h1>Listado de Sectores</h1>
+
+<table class = "table">
+
+	<tr>
+		<th>Codigo</th>
+		<th>Nombre</th>
+		<th>Descripcion</th>
+		<th>Opciones</th>
+	</tr>
+
+	{% for sector in sectores %}
+
+	<tr>
+		<th>{{ sector.getCodigo() }}</th>
+		<th>{{ sector.getNombre() }}</th>
+		<th>{{ sector.getDescripcion() }}</th>
+
+		<td><a href="eliminarSector?codigo={{ sector.getCodigo() }}"  class="btn btn-danger">Eliminar</a>
+			<a href="modificarSector?codigo={{ sector.getCodigo() }}" class="btn btn-warning">Modificar</a></td>
+	</tr>
+	{% endfor %}
+</table>
+<h4>
+	{{ mensaje }}
+</h4>
+{% endblock contenido %}

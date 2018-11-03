@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block contenido %}
+
+<h3>Listado de Animales segun Fecha de Ingreso</h3>
+
+<form action="fechaIngresoAnimal" method="post" class="form"
+	align="center">
+	<div class="row">
+		<table class="table-primary" align="center">
+			<div class="col-sm-6">
+			<tr>
+				<td><label for="">Fecha Inicio</label></td>
+				<td><input type="date" name="txtFechaIni" id="txtFechaIni" /></td>
+
+			</tr>
+			</div>
+			<div class="col-sm-6">
+			<tr>
+				<td><label for="">Fecha Fin</label></td>
+				<td><input type="date" name="txtFechaFin" id="txtFechaFin" /></td>
+
+			</tr>
+			</div>
+			<br>
+
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Consultar"
+					class="btn btn-primary" /></td>
+			</tr>
+		</table>
+	</div>
+	<br> <br>
+	<table class="table">
+
+		<tr>
+			<th>Codigo</th>
+			<th>Nombre</th>
+			<th>Peso</th>
+			<th>Tipo</th>
+			<th>Genero</th>
+			<th>Fecha Nacimiento</th>
+			<th>Sector</th>
+			<th>Fecha Ingreso</th>
+			<th>Fecha Defuncion</th>
+		</tr>
+
+		{% for animal in animales %}
+
+		<tr>
+			<th>{{ animal.getCodigo() }}</th>
+			<th>{{ animal.getNombre() }}</th>
+			<th>{{ animal.getPeso() }}</th>
+			<th>{{ animal.getTipo().getNombre() }}</th>
+			<th>{{ animal.getGenero() }}</th>
+			<th>{{ animal.getFechaNacimiento() }}</th>
+			<th>{{ animal.getSector().getNombre() }}</th>
+			<th>{{ animal.getFechaIngreso() }}</th>
+			<th>{{ animal.getFechaDefuncion() }}</th>
+
+		</tr>
+		{% endfor %}
+	</table>
+	<h4>
+		{{ mensaje }}
+	</h4>
+	{% endblock contenido %}

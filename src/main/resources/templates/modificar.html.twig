@@ -1,0 +1,92 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block contenido %}
+
+
+
+<div class="container" align="center">
+
+	<h1 style="color: azure;">Modificar Animal</h1>
+	<br> <br> <br>
+	<form action="actualizar" method="post">
+		<input type="hidden" name="txtId" id="txtId"
+			value="{{ animal.getCodigo() }}" />
+		<table class="table">
+			<tr>
+				<td><label for="">Nombre</label></td>
+				<td><input type="text" name="txtNombre" id="txtNombre"
+					value="{{ animal.getNombre() }}" required=""/></td>
+			</tr>
+			<tr>
+				<td><label for="">Peso</label></td>
+				<td><input type="number" name="txtPeso" id="txtPeso"
+					value="{{ animal.getPeso() }}" required="" /></td>
+			</tr>
+			<tr>
+				<td><label for="">Tipo</label></td>
+				<td><select name="cboTipo" id="cboTipo">
+						
+
+						{% for t in tipos %}
+						<option
+							{{ (t.getCodigo() == animal.getTipo().getCodigo())?'selected':'' }}
+							value="{{ t.getCodigo() }}">{{ t.getNombre() }}</option>
+						{% endfor %}
+
+				</select></td>
+			</tr>
+			<tr>
+				<td><label for="">Genero</label></td>
+				<td><input type="text" name="txtGenero" id="txtGenero"
+					value="{{ animal.getGenero() }}"  required=""/></td>
+			</tr>
+			<tr>
+				<td><label for="">Fecha Nacimiento</label></td>
+				<td><input type="date" name="txtFechaNacimiento"
+					id="txtFechaNacimiento" value="{{ animal.getFechaNacimiento() }}" /></td>
+
+			</tr>
+			<tr>
+				<td><label for="">Sector</label></td>
+				<td><select name="cboSector" id="cboSector">
+						
+
+						{% for s in sectores %}
+						<option
+							{{ (s.getCodigo() == animal.getSector().getCodigo())?'selected':'' }}
+							value="{{ s.getCodigo() }}">{{ s.getNombre() }}</option>
+						{% endfor %}
+
+				</select></td>
+			</tr>
+			<tr>
+				<td><label for="">Fecha ingreso</label></td>
+				<td><input type="date" name="txtFechaIngreso"
+					id="txtFechaIngreso" value="{{ animal.getFechaIngreso() }}" /></td>
+
+			</tr>
+			<tr>
+				<td><label for="">Fecha Defuncion</label></td>
+				<td><input type="date" name="txtFechaDefuncion"
+					id="txtFechaDefuncion" value="{{ animal.getFechaDefuncion() }}" /></td>
+
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><input type="submit" class="btn btn-primary" value="Modificar" /></td>
+			</tr>
+		</table>
+
+
+	</form>
+
+<h4>
+	{{ mensaje }}
+</h4>
+</div>
+
+{% endblock contenido %}
+

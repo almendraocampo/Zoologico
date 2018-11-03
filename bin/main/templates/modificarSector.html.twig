@@ -1,0 +1,44 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block contenido %}
+
+<div class="container" align="center">
+
+	<h1 style="color: azure;">Modificar Sector</h1>
+	<br> <br> <br>
+
+
+	<form action="actualizarSector" method="post">
+		<input type="hidden" name="txtId" id="txtId"
+			value="{{ sector.getCodigo() }}" />
+		<table class="table">
+			<tr>
+				<td><label for="">Nombre</label></td>
+				<td><input type="text" name="txtNombre" id="txtNombre"
+					value="{{ sector.getNombre() }}" required="" /></td>
+			</tr>
+			<tr>
+				<td><label for="">Descripcion</label></td>
+				<td><input type="text" name="txtDescripcion"
+					id="txtDescripcion" value="{{ sector.getDescripcion() }}"  required=""/></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><input type="submit" class="btn btn-primary"
+					value="Modificar" /></td>
+			</tr>
+		</table>
+
+
+	</form>
+
+	<h4>
+		{{ mensaje }}
+	</h4>
+</div>
+
+{% endblock contenido %}
+

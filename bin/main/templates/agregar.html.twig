@@ -1,0 +1,85 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block contenido %}
+
+
+<div class="container" align="center">
+
+
+
+	<h2 style="color: azure;">Agregar Animal</h2>
+	<br> 
+	<form action="almacenar" method="post">
+
+		<table class="table">
+			<tr>
+				<td><label for="">Nombre</label></td>
+				<td><input type="text" name="txtNombre" id="txtNombre" required=""/></td>
+			</tr>
+			<tr>
+				<td><label for="">Peso</label></td>
+				<td><input type="number" name="txtPeso" id="txtPeso" min=0  required="" /></td>
+			</tr>
+			<tr>
+				<td><label for="">Tipo</label></td>
+				<td><select name="cboTipo" id="cboTipo">
+
+
+						{% for t in tipos %}
+						<option value="{{ t.getCodigo() }}">{{ t.getNombre() }}</option>
+						{% endfor %}
+
+				</select></td>
+			</tr>
+			<tr>
+				<td><label for="">Genero</label></td>
+				<td><input type="text" name="txtGenero" id="txtGenero" required=""/></td>
+			</tr>
+			<tr>
+				<td><label for="">Fecha Nacimiento</label></td>
+				<td><input type="date" name="txtFechaNacimiento"
+					id="txtFechaNacimiento" /></td>
+
+			</tr>
+			<tr>
+				<td><label for="">Sector</label></td>
+				<td><select name="cboSector" id="cboSector">
+
+
+						{% for s in sectores %}
+						<option value="{{ s.getCodigo() }}">{{ s.getNombre() }}</option>
+						{% endfor %}
+
+				</select></td>
+			</tr>
+			<tr>
+				<td><label for="">Fecha ingreso</label></td>
+				<td><input type="date" name="txtFechaIngreso"
+					id="txtFechaIngreso" /></td>
+
+			</tr>
+			<tr>
+				<td><label for="">Fecha Defuncion</label></td>
+				<td><input type="date" name="txtFechaDefuncion"
+					id="txtFechaDefuncion" /></td>
+
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><input type="submit" class="btn btn-primary"
+					value="Guardar" /></td>
+			</tr>
+		</table>
+
+	</form>
+
+
+	<h4>
+		{{ mensaje }}
+	</h4>
+</div>
+{% endblock contenido %}
+
